@@ -1,24 +1,14 @@
 const Doctor = require('../models/Doctor');
 
 //get doctor
-// Node.js / Express controller example
-app.get('/api/doctors/list-doctor-with-filter', async (req, res) => {
-  const { gender, availability, page = 1 } = req.query;
-
-  const filter = {};
-  if (gender) filter.gender = gender;
-  if (availability) filter.available_on = availability;
-
-  const limit = 10;
-  const skip = (page - 1) * limit;
-
+exports.getAllDoctors = async (req, res) => {
   try {
-    const doctors = await Doctor.find(filter).skip(skip).limit(limit);
-    res.json(doctors);
-  } catch (err) {
-    res.status(500).json({ error: "Failed to fetch doctors." });
+    const doctors = await Doctor.find();
+    res.status(200).json(doctors);
+  } catch (error) {
+    res.status(500).json({ error: 'Error fetching doctors' });
   }
-});
+};
 
 
 // Add doctor

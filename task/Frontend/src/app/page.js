@@ -55,7 +55,7 @@ export default function GeneralPhysicianPage() {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-semibold mb-4">
+      <h2 className="text-2xl font-semibold mb-4 text-gray-700">
         General Physician / Internal Medicine
       </h2>
 
@@ -66,9 +66,9 @@ export default function GeneralPhysicianPage() {
       />
 
       {loading ? (
-        <p>Loading...</p>
+        <p className="text-gray-600">Loading...</p>
       ) : doctors.length === 0 ? (
-        <p>No doctors found.</p>
+        <p className="text-gray-600">No doctors found.</p>
       ) : (
         <>
           <div className="grid gap-4 mt-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -81,14 +81,14 @@ export default function GeneralPhysicianPage() {
             <button
               onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
               disabled={page === 1}
-              className="px-4 py-2 border rounded"
+              className="px-4 py-2 border rounded text-gray-700"
             >
               Previous
             </button>
-            <span className="px-4 py-2 border rounded">Page {page}</span>
+            <span className="px-4 py-2 border rounded text-gray-700">Page {page}</span>
             <button
               onClick={() => setPage((prev) => prev + 1)}
-              className="px-4 py-2 border rounded"
+              className="px-4 py-2 border rounded text-gray-700"
             >
               Next
             </button>

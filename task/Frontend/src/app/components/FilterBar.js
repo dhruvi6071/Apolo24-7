@@ -1,3 +1,4 @@
+import "../globals.css";
 import { useState, useEffect } from "react";
 
 export default function FilterBar({ filters, updateFilters, onClear }) {
@@ -20,7 +21,7 @@ export default function FilterBar({ filters, updateFilters, onClear }) {
   return (
     <div className="flex gap-4 mb-6">
       <select
-        className="p-2 border border-gray-300"
+        className="p-2 border border-gray-600 text-gray-600"
         value={gender}
         onChange={(e) => setGender(e.target.value)}
       >
@@ -30,7 +31,7 @@ export default function FilterBar({ filters, updateFilters, onClear }) {
       </select>
 
       <select
-        className="p-2 border border-gray-300"
+        className="p-2 border border-gray-600 text-gray-600"
         value={availability}
         onChange={(e) => setAvailability(e.target.value)}
       >
@@ -39,11 +40,11 @@ export default function FilterBar({ filters, updateFilters, onClear }) {
         <option value="Next-Week">Next-week</option>
       </select>
 
-      <button className="p-2 border border-gray-300" onClick={handleFilterChange}>
+      <button className="p-2 border border-gray-600 text-gray-600" onClick={handleFilterChange}>
         Apply filters
       </button>
 
-      <button className="p-2 border border-red-400 text-red-600" onClick={onClear}>
+      <button className="p-2 border border-red-400 text-red-400" onClick={onClear}>
         Clear filters
       </button>
     </div>
