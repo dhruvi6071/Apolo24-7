@@ -36,6 +36,6 @@ app.get('/api/doctors/list-doctor-with-filter', async (req, res) => {
 });
 
 //connect to DB
-mongoose.connect(process.env.MONGO_URI).then(() => app.listen(5000, () => console.log("Server is running on port 5000"))).catch(err => console.error(err));
+mongoose.connect(process.env.MONGO_URI).then(() => app.listen(process.env.PORT || 5000, () => console.log("Server is running on port 5000"))).catch(err => console.error(err));
 
 module.exports = app;
