@@ -23,7 +23,7 @@ export default function GeneralPhysicianPage() {
         Object.entries(queryParams).filter(([_, v]) => v !== '')
       );
 
-      const res = await axios.get("https://apolo24-7-1.onrender.com//api/doctors/list-doctor-with-filter", {
+      const res = await axios.get("https://apolo24-7-1.onrender.com/api/doctors/list-doctor-with-filter", {
         params: cleanParams,
       });
 
